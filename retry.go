@@ -14,6 +14,9 @@ type Retryer struct {
 	Delay *time.Duration
 }
 
+// Retrier is a type alias for Retryer
+type Retrier = Retryer
+
 // Run runs the function to be retried. If the function returns an error, it will be called again
 // unless it has reached the max amount of retries, or the context has expired
 func (r Retryer) Run() (interface{}, error) {
